@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block nav %}
+<ul id="nav" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        {% block nav-home %}
+            <a class="nav-link" href="{% url 'Recruiter:home' %}">Home</a>
+        {% endblock %}
+    </li>
+    <li class="nav-item">
+        {% block nav-questions %}
+            <a class="nav-link" href="{% url 'Recruiter:questions' %}">Questions</a>
+        {% endblock %}
+    </li>
+    <li class="nav-item active">
+        {% block nav-add-question %}
+            <a class="nav-link" href="{% url 'Recruiter:addQuestion' %}">Add question</a>
+        {% endblock %}
+    </li>
+</ul>
+{%  endblock %}
+
+{% block breadcrumb %}
+    Add question
+{% endblock %}
+
+{% block content %}
+{% load widget_tweaks %}
+
+<form method="post" novalidate>
+  {% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+
+      {% if form.is_bound %}
+        {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% render_field field class="form-control is-valid" %}
+        {% endif %}
+      {% else %}
+        {% render_field field class="form-control" %}
+      {% endif %}
+
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
