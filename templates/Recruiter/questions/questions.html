@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block nav-a-questions%}
+<a class="nav-link dropdown-toggle active" href="#" id="questionMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Questions
+                                </a>
+{%  endblock %}
+
+{% block breadcrumb %}
+    Questions
+{% endblock %}
+
+{% block content %}
+  <h2>Questions</h2>
+
+    {% if questionList %}
+    <ul>
+    {% for question in questionList %}
+        <li><a href="{% url 'detail' question.id %}">{{ question.summary }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}
+
+
+{% endblock %}

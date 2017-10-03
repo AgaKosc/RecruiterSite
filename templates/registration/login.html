@@ -1,16 +1,19 @@
 {% extends 'loginBase.html' %}
 {% block content %}
 
-<div class="col-md-4">
-    <ul class="nav nav-tabs nav-fill">
+<div id="container" class="col-md-4">
+    <div id="header">
+        <ul class="nav nav-tabs nav-fill">
         <li class="nav-item">
-            <a class="nav-link active bg-success text-dark" href="{% url 'Recruiter:login' %}"><b>Login</b></a>
+            <a class="nav-link active bg-success text-dark" href="{% url 'login' %}"><b>Login</b></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'Recruiter:signup' %}">Sign up</a>
+            <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
         </li>
     </ul>
-    <div class="login-panel panel panel-default form-control">
+    </div>
+    <div id="content" class="form-control">
+        <div class="login-panel panel panel-default">
         <div class="panel-heading">
             {% if form.errors %}
                 <div class="alert alert-danger" role="alert">Your username and password didn't match. Please try again.</div>
@@ -18,15 +21,8 @@
             <h3 class="panel-title text-center">Please Sign In</h3>
         </div>
         <div class="panel-body">
-            <form method="post" class="form-horizontal" action=".">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input class="form-control" type="text" id="username" name="username"  placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input class="form-control" type="password" name="password" id="password" placeholder="Password">
-                </div>
+            <form method="post" class="form-horizontal" action="" novalidate>
+                {% include 'includes/form.html' %}
                 <div class="bs-component">
                     <center>
                         <input class="btn btn-success btn-sm" type="submit" value="login" />
@@ -36,6 +32,7 @@
                 {% csrf_token %}
             </form>
         </div>
+    </div>
     </div>
 </div>
 

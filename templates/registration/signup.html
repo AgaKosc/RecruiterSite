@@ -1,0 +1,29 @@
+{% extends 'loginBase.html' %}
+{% block content %}
+
+<div class="col-md-4">
+    <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active bg-success text-dark" href="{% url 'signup' %}"><b>Sign up</b></a>
+        </li>
+    </ul>
+    <div class="login-panel panel panel-default form-control">
+
+        <div class="panel-body">
+            <form method="post" class="form-horizontal" action="" novalidate>
+                {% include 'includes/form.html' %}
+                <div class="bs-component">
+                    <center>
+                        <input class="btn btn-success btn-sm" type="submit" value="signup" />
+                    </center>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

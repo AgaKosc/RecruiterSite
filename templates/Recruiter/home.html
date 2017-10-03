@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block nav-home %}
+<li class="nav-item active">
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+</li>
+{%  endblock %}
+
+{% block breadcrumb %}
+    Home
+{% endblock %}
+
+
+{% block content %}
+  <h2>Home</h2>
+{% endblock %}

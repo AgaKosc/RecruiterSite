@@ -1,24 +1,9 @@
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from Recruiter.models.models import *
 from Recruiter.forms.forms import *
-
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('Recruiter:home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
 
 @login_required()
 def home(request):
@@ -37,6 +22,7 @@ def detail(request, questionId):
 
 @login_required()
 def addQuestion(request):
+    user = User.objects.first()
     if request.method == 'POST':
         form = AddQuestionForm(request.POST)
         if form.is_valid():

@@ -12,11 +12,11 @@ class AddQuestionForm(forms.Form):
     summary = forms.CharField(label='Summary', max_length=100)
     content = forms.CharField(
         max_length=20000,
-        widget=forms.Textarea(),
+        widget=forms.Textarea(attrs={'rows':5}),
     )
     answer = forms.CharField(
         max_length=20000,
-        widget=forms.Textarea(),
+        widget=forms.Textarea(attrs={'rows':5}),
     )
 
     def clean(self):

@@ -40,11 +40,13 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
 
+    'accounts',
     'Recruiter'
 ]
 
 LOGIN_URL='login/'
-LOGIN_REDIRECT_URL = '/Recruiter'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

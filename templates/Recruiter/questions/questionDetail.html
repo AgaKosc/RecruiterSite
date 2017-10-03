@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block nav-a-questions %}
+<a class="nav-link dropdown-toggle active" href="#" id="questionMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Questions
+                                </a>
+{%  endblock %}
+
+{% block breadcrumb %}
+    Questions > Question details
+{% endblock %}
+
+{% block content %}
+<h1>{{ question.summary }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+Category: {{ question.category }} <br>
+Content: {{ question.content }} <br>
+Answer: {{ question.answer }} <br>
+
+{% endblock %}

@@ -17,7 +17,17 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
+from Recruiter.views import views
+from accounts import views as account_views
+
+
 urlpatterns = [
+    url(r'^$', views.home, name='home'),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
+    url(r'^signup/$', account_views.signup, name='signup'),
+    url(r'^questions/$', views.questions, name='questions'),
+    url(r'^questions/(?P<questionId>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^addQuestion/$', views.addQuestion, name='addQuestion'),
     url(r'^admin/', admin.site.urls),
-    url(r'^Recruiter/', include('Recruiter.urls')),
 ]
