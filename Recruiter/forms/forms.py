@@ -1,4 +1,7 @@
 from django import forms
+from multipleselectionfield import MultipleSelectionFormField
+
+from Recruiter.models.models import Question, CategoryType
 
 
 class RegistrationForm(forms.Form):
@@ -8,7 +11,7 @@ class RegistrationForm(forms.Form):
     password2 = forms.CharField(label='Password (Again)', widget=forms.PasswordInput())
 
 
-class AddQuestionForm(forms.Form):
+class AddQuestionForm(forms.ModelForm):
     summary = forms.CharField(label='Summary', max_length=100)
     content = forms.CharField(
         max_length=20000,
@@ -18,6 +21,12 @@ class AddQuestionForm(forms.Form):
         max_length=20000,
         widget=forms.Textarea(attrs={'rows':5}),
     )
+    categoryChoices = [[cat.id, cat.category_name] for cat in CategoryType.objects.all()]
+    choices = forms.MultipleChoiceField(label='Category', choices=categoryChoices, widget=forms.CheckboxSelectMultiple)
+
+    class Meta:
+        model = Question
+        fields = ['summary', 'content', 'answer']
 
     def clean(self):
         cleaned_data = super(AddQuestionForm, self).clean()
