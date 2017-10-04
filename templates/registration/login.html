@@ -1,39 +1,26 @@
 {% extends 'loginBase.html' %}
+
+{% load static %}
+
 {% block content %}
-
-<div id="container" class="col-md-4">
-    <div id="header">
-        <ul class="nav nav-tabs nav-fill">
-        <li class="nav-item">
-            <a class="nav-link active bg-success text-dark" href="{% url 'login' %}"><b>Login</b></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
-        </li>
-    </ul>
-    </div>
-    <div id="content" class="form-control">
-        <div class="login-panel panel panel-default">
-        <div class="panel-heading">
-            {% if form.errors %}
-                <div class="alert alert-danger" role="alert">Your username and password didn't match. Please try again.</div>
-            {% endif %}
-            <h3 class="panel-title text-center">Please Sign In</h3>
-        </div>
-        <div class="panel-body">
-            <form method="post" class="form-horizontal" action="" novalidate>
-                {% include 'includes/form.html' %}
-                <div class="bs-component">
-                    <center>
-                        <input class="btn btn-success btn-sm" type="submit" value="login" />
-                    </center>
-                </div>
-                <input type="hidden" name="next" value="{{ next }}" />
-                {% csrf_token %}
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Log in</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'includes/form.html' %}
+              <button type="submit" class="btn btn-primary btn-block">Log in</button>
             </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            New here? <a href="{% url 'signup' %}">Sign up</a>
+          </div>
         </div>
-    </div>
-    </div>
-</div>
-
+        <div class="text-center py-2">
+          <small>
+            <a href="#" class="text-muted">Forgot your password?</a>
+          </small>
+        </div>
+      </div>
 {% endblock %}
