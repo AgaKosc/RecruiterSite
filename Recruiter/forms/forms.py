@@ -3,6 +3,8 @@ from multipleselectionfield import MultipleSelectionFormField
 
 from Recruiter.models.models import Question, CategoryType
 
+from Recruiter.models.models import Question
+
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label='Username', max_length=30)
@@ -23,6 +25,10 @@ class AddQuestionForm(forms.ModelForm):
     )
     categoryChoices = [[cat.id, cat.category_name] for cat in CategoryType.objects.all()]
     choices = forms.MultipleChoiceField(label='Category', choices=categoryChoices, widget=forms.CheckboxSelectMultiple)
+
+    class Meta:
+        model = Question
+        fields = ['summary', 'content', 'answer']
 
     class Meta:
         model = Question
