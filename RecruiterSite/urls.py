@@ -23,7 +23,7 @@ from Recruiter.views import views
 from accounts import views as account_views
 
 
-logging.basicConfig(filename="logs.txt", level=logging.INFO)
+logging.basicConfig(filename="logs.txt")
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),

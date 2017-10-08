@@ -31,7 +31,7 @@ def addQuestion(request):
             return redirect('questions')
         else:
             for err in form.errors:
-                logging.info(err)
+                logging.error(err)
     else:
         form = AddQuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
