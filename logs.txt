@@ -272,3 +272,5 @@ Traceback (most recent call last):
   File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
     return Database.Cursor.execute(self, query, params)
 django.db.utils.IntegrityError: NOT NULL constraint failed: Recruiter_question.category_type_id
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:root:summary

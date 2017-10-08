@@ -27,7 +27,14 @@ def addQuestion(request):
     if request.method == 'POST':
         form = AddQuestionForm(request.POST)
         if form.is_valid():
-            newQuestion = form.save()
+            newQuestion = form.save(commit=False)
+            Question.objects.create(
+                summary=form.cleaned_data.get('summary'),
+                content=form.cleaned_data.get('content'),
+                answer=form.cleaned_data.get('answer'),
+                author=request.user,
+                category_type=form.cleaned_data.get('category_type')
+            )
             return redirect('questions')
         else:
             for err in form.errors:
