@@ -42,3 +42,8 @@ def addQuestion(request):
     else:
         form = AddQuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
+
+@login_required()
+def editQuestion(request, questionId):
+    question = get_object_or_404(Question, pk=questionId)
+    return render(request, 'Recruiter/questions/editQuestion.html')
