@@ -274,3 +274,109 @@ Traceback (most recent call last):
 django.db.utils.IntegrityError: NOT NULL constraint failed: Recruiter_question.category_type_id
 WARNING:django.request:Not Found: /favicon.ico
 ERROR:root:summary
+ERROR:django.request:Internal Server Error: /questions/6/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 23, in detail
+    return render(request, 'Recruiter/questions/questionDetail.html', {'question': question})
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'editQuestion' not found. 'editQuestion' is not a valid view function or pattern name.
+ERROR:django.request:Internal Server Error: /questions/6/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 23, in detail
+    return render(request, 'Recruiter/questions/questionDetail.html', {'question': question})
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'editQuestion' not found. 'editQuestion' is not a valid view function or pattern name.
