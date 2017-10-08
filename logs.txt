@@ -1,0 +1,274 @@
+INFO:root:dupa
+INFO:root:choices
+INFO:root:choices
+ERROR:django.request:Internal Server Error: /addQuestion/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 45, in addQuestion
+    return render(request, 'Recruiter/questions/addQuestion.html', {'question_form': question_form, 'category_form': category_form})
+UnboundLocalError: local variable 'question_form' referenced before assignment
+ERROR:django.request:Internal Server Error: /addQuestion/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 30, in addQuestion
+    if question_form.is_valid() and category_form.is_valid():
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 386, in full_clean
+    self._post_clean()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+TypeError: full_clean() missing 1 required positional argument: 'self'
+ERROR:django.request:Internal Server Error: /addQuestion/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 30, in addQuestion
+    if question_form.is_valid() and category_form.is_valid():
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\forms.py", line 386, in full_clean
+    self._post_clean()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\forms\models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+TypeError: full_clean() missing 1 required positional argument: 'self'
+ERROR:django.request:Internal Server Error: /addQuestion/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table Recruiter_question has no column named category_type_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 35, in addQuestion
+    author=request.user
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table Recruiter_question has no column named category_type_id
+ERROR:django.request:Internal Server Error: /admin/Recruiter/question/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: Recruiter_question.category_type_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\options.py", line 1662, in changelist_view
+    selection_note=_('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 232, in __len__
+    self._fetch_all()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: Recruiter_question.category_type_id
+ERROR:django.request:Internal Server Error: /admin/Recruiter/question/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: Recruiter_question.category_type_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\admin\options.py", line 1662, in changelist_view
+    selection_note=_('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 232, in __len__
+    self._fetch_all()
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: Recruiter_question.category_type_id
+ERROR:django.request:Internal Server Error: /addQuestion/
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: Recruiter_question.category_type_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\Recruiter\views\views.py", line 35, in addQuestion
+    author=request.user
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: Recruiter_question.category_type_id

@@ -5,4 +5,3 @@ from Recruiter.models.models import *
 admin.site.register(Question)
 admin.site.register(QuestionVotes)
 admin.site.register(CategoryType)
-admin.site.register(QuestionCategory)

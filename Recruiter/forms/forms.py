@@ -3,6 +3,8 @@ from multipleselectionfield import MultipleSelectionFormField
 
 from Recruiter.models.models import Question, CategoryType
 
+from Recruiter.models.models import Question
+
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label='Username', max_length=30)
@@ -28,10 +30,6 @@ class AddQuestionForm(forms.ModelForm):
         model = Question
         fields = ['summary', 'content', 'answer']
 
-    def clean(self):
-        cleaned_data = super(AddQuestionForm, self).clean()
-        title = cleaned_data.get('title')
-        content = cleaned_data.get('content')
-        answer = cleaned_data.get('answer')
-        if not title and not content and not answer:
-            raise forms.ValidationError('You have to write something!')
+    class Meta:
+        model = Question
+        fields = ['summary', 'content', 'answer', 'category_type']

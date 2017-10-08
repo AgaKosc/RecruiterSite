@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import logging
+
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -20,6 +22,8 @@ from django.contrib.auth import views as auth_views
 from Recruiter.views import views
 from accounts import views as account_views
 
+
+logging.basicConfig(filename="logs.txt")
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
