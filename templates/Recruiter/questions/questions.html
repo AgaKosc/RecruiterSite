@@ -6,19 +6,40 @@
                                 </a>
 {%  endblock %}
 
-{% block breadcrumb %}
-    Questions > Questions List
-{% endblock %}
 
 {% block content %}
-  <h2>Questions</h2>
+<div class="p-3">
+    <div class="row">
+        <h2>Questions</h2>
+        <div class="ml-md-auto">
+            <a href="{% url 'addQuestion' %}" class="btn btn-primary">New question</a>
+        </div>
+    </div>
+</div>
 
-    {% if questionList %}
-    <ul>
-    {% for question in questionList %}
-        <li><a href="{% url 'detail' question.id %}">{{ question.summary }}</a></li>
-    {% endfor %}
-    </ul>
+{% if questionList %}
+    <table class="table table-striped">
+        <thead class="thead-inverse">
+            <tr>
+                <th> Summary </th>
+                <th> Category </th>
+                <th> Votes </th>
+                <th> Reporter </th>
+                <th> Last update </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questionList %}
+            <tr>
+                <td class="w-50"><a href="{% url 'detail' question.id %}">{{ question.summary }}</a></td>
+                <td>{{question.category_type}}</td>
+                <td>{{question.votes}}</td>
+                <td>{{question.author}}</td>
+                <td class="nowrap">{{question.last_change_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% else %}
     <p>No questions are available.</p>
 {% endif %}
