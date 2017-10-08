@@ -8,12 +8,52 @@
 
 
 {% block content %}
-<h1>{{ question.summary }}</h1>
+<div class="p-3">
+    <div class="row">
+        <h2>Question Detail</h2>
+        {% if request.user == question.author  %}
+        <div class="ml-md-auto ">
+            <a href="{% url 'editQuestion' question.id %}" class="btn btn-primary">Edit question</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-Category: {{ question.category }} <br>
-Content: {{ question.content }} <br>
-Answer: {{ question.answer }} <br>
+<div class="container">
+    <div class="row1">
+        <div class="row2">
+            <b>Summary:</b>
+        </div>
+        <div class="row2">
+            {{ question.summary }}
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row2">
+            <b>Category:</b>
+        </div>
+        <div class="row2">
+            {{ question.category_type }}
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row2">
+            <b>Content:</b>
+        </div>
+        <div class="row2 text-justify">
+            {{ question.content }}
+        </div>
+    </div>
+    <div class="row1">
+        <div class="row2">
+            <b>Answer:</b>
+        </div>
+        <div class="row2 text-justify">
+            {{ question.answer }}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
