@@ -36,9 +36,6 @@ def addQuestion(request):
                 category_type=form.cleaned_data.get('category_type')
             )
             return redirect('questions')
-        else:
-            for err in form.errors:
-                logging.error(err)
     else:
         form = AddQuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
@@ -46,4 +43,18 @@ def addQuestion(request):
 @login_required()
 def editQuestion(request, questionId):
     question = get_object_or_404(Question, pk=questionId)
-    return render(request, 'Recruiter/questions/editQuestion.html')
+    if request.method == 'POST':
+        form = AddQuestionForm(initial={'summary': question.summary,
+                                        'content': question.content,
+                                        'answer': question.answer,
+                                        'category_type': question.category_type})
+        if form.is_valid():
+            updatedQuestion = form.save(commit=False)
+            question.summary=form.cleaned_data.get('summary')
+            question.content=form.cleaned_data.get('content')
+            question.answer=form.cleaned_data.get('answer')
+            question.category_type=form.cleaned_data.get('category_type')
+            question.save()
+    else:
+        form = AddQuestionForm()
+    return render(request, 'Recruiter/questions/editQuestion.html', {'form': form})

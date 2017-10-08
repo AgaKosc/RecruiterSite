@@ -10,5 +10,11 @@
 
 
 {% block content %}
-Work in progress :)
+{% load widget_tweaks %}
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Edit Question</button>
+</form>
 {% endblock %}
