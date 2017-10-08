@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -25,14 +27,11 @@ def addQuestion(request):
     if request.method == 'POST':
         form = AddQuestionForm(request.POST)
         if form.is_valid():
-            newQuestion = form.save(commit=False)
-            Question.objects.create(
-                summary=form.cleaned_data.get('summary'),
-                content=form.cleaned_data.get('content'),
-                answer=form.cleaned_data.get('answer'),
-                author=request.user
-            )
+            newQuestion = form.save()
             return redirect('questions')
+        else:
+            for err in form.errors:
+                logging.info(err)
     else:
         form = AddQuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
