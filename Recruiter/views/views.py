@@ -25,7 +25,7 @@ def detail(request, questionId):
 @login_required()
 def addQuestion(request):
     if request.method == 'POST':
-        form = AddQuestionForm(request.POST)
+        form = QuestionForm(request.POST)
         if form.is_valid():
             newQuestion = form.save(commit=False)
             Question.objects.create(
@@ -37,14 +37,15 @@ def addQuestion(request):
             )
             return redirect('questions')
     else:
-        form = AddQuestionForm()
+        form = QuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
 
 @login_required()
 def editQuestion(request, questionId):
     question = get_object_or_404(Question, pk=questionId)
     if request.method == 'POST':
-        form = AddQuestionForm(initial={'summary': question.summary,
+        form = QuestionForm(request.POST,
+                            initial={'summary': question.summary,
                                         'content': question.content,
                                         'answer': question.answer,
                                         'category_type': question.category_type})
@@ -56,5 +57,5 @@ def editQuestion(request, questionId):
             question.category_type=form.cleaned_data.get('category_type')
             question.save()
     else:
-        form = AddQuestionForm()
+        form = QuestionForm()
     return render(request, 'Recruiter/questions/editQuestion.html', {'form': form})
