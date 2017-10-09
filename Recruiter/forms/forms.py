@@ -2,6 +2,7 @@ from django import forms
 
 from Recruiter.models.models import Question
 
+
 class RegistrationForm(forms.Form):
     username = forms.CharField(label='Username', max_length=30)
     email = forms.EmailField(label='Email')
@@ -25,8 +26,8 @@ class QuestionForm(forms.ModelForm):
         fields = ['summary', 'content', 'answer', 'category_type']
 
     def get_initial(self):
-        initial = super(QuestionForm, self).get_initial()
+        super(QuestionForm, self).get_initial()
         return {'summary': self.request.summary,
-                                        'content': self.request.content,
-                                        'answer': self.request.answer,
-                                        'category_type':self.request.category_type}
+                'content': self.request.content,
+                'answer': self.request.answer,
+                'category_type':self.request.category_type}

@@ -1,15 +1,13 @@
-import logging
-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 
-from Recruiter.models.models import *
 from Recruiter.forms.forms import *
+
 
 @login_required()
 def home(request):
     return render(request, 'Recruiter/home.html')
+
 
 @login_required()
 def questions(request):
@@ -17,10 +15,12 @@ def questions(request):
     context = {'questionList': questionList}
     return render(request, 'Recruiter/questions/questions.html', context)
 
+
 @login_required()
 def detail(request, questionId):
     question = get_object_or_404(Question, pk=questionId)
     return render(request, 'Recruiter/questions/questionDetail.html', {'question': question})
+
 
 @login_required()
 def addQuestion(request):
@@ -40,6 +40,7 @@ def addQuestion(request):
         form = QuestionForm()
     return render(request, 'Recruiter/questions/addQuestion.html', {'form': form})
 
+
 @login_required()
 def editQuestion(request, questionId):
     question = get_object_or_404(Question, pk=questionId)
@@ -50,7 +51,7 @@ def editQuestion(request, questionId):
                                         'answer': question.answer,
                                         'category_type': question.category_type})
         if form.is_valid():
-            updatedQuestion = form.save(commit=False)
+            form.save(commit=False)
             question.summary=form.cleaned_data.get('summary')
             question.content=form.cleaned_data.get('content')
             question.answer=form.cleaned_data.get('answer')

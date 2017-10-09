@@ -11,12 +11,12 @@
 
 {% block content %}
 {% load widget_tweaks %}
-
+<div class="p-3">
 <form method="post" novalidate>
     {% csrf_token %}
     {% include 'includes/form.html' %}
     <button type="submit" class="btn btn-success">Save Changes</button>
     <a href="{% url 'questions' %}" class="btn btn-outline-secondary" role="button">Cancel</a>
   </form>
-</form>
+</div>
 {% endblock %}
