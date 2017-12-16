@@ -10,11 +10,11 @@ class CategoryType(models.Model):
 
 
 class Question(models.Model):
-    author = models.ForeignKey('auth.User', default=1)
+    author = models.ForeignKey('auth.User', default=1, on_delete=models.SET_DEFAULT)
     summary = models.CharField(max_length=100, unique=True)
     content = models.TextField(max_length=5000, null=True)
     answer = models.TextField(max_length=5000, null=True)
-    category_type = models.ForeignKey(CategoryType)
+    category_type = models.ForeignKey(CategoryType, on_delete=models.PROTECT)
     creation_date = models.DateTimeField(auto_now_add=True)
     last_change_date = models.DateField(auto_now_add=True)
     votes = models.IntegerField(default=0)
@@ -24,8 +24,8 @@ class Question(models.Model):
 
 
 class QuestionVotes(models.Model):
-    user = models.ForeignKey('auth.User')
-    question = models.ForeignKey(Question)
+    user = models.ForeignKey('auth.User', on_delete=models.PROTECT)
+    question = models.ForeignKey(Question, on_delete=models.PROTECT)
     vote = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     def __str__(self):
