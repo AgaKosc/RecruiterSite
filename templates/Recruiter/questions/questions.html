@@ -17,6 +17,14 @@
     </div>
 </div>
 
+<form method="get">
+    <div class="ml-md-auto">
+        {{ filter.form.as_p }}
+    <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+
+  </form>
+
 {% if questionList %}
     <table class="table table-striped">
         <thead class="thead-inverse">
@@ -29,7 +37,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for question in questionList %}
+        {% for question in filter.qs %}
             <tr>
                 <td class="w-50"><a href="{% url 'detail' question.id %}">{{ question.summary }}</a></td>
                 <td>{{question.category_type}}</td>
