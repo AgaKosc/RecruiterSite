@@ -11,7 +11,7 @@ class CategoryType(models.Model):
 
 
 class Question(models.Model):
-    author = models.ForeignKey(User)
+    author = models.ForeignKey('auth.User')
     summary = models.CharField(max_length=100, unique=True)
     content = models.TextField(max_length=5000, null=True)
     answer = models.TextField(max_length=5000, null=True)

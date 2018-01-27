@@ -380,3 +380,5 @@ Traceback (most recent call last):
   File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'editQuestion' not found. 'editQuestion' is not a valid view function or pattern name.
+    return bound_func(*args, **kwargs)
+  File "C:\Users\music\Documents\GitHub\RecruiterSite\venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
