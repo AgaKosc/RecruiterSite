@@ -30,4 +30,4 @@ class QuestionForm(forms.ModelForm):
         return {'summary': self.request.summary,
                 'content': self.request.content,
                 'answer': self.request.answer,
-                'category_type':self.request.category_type}
+                'category_type': self.request.category_type}

@@ -20,7 +20,6 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 
-from Recruiter.views.QuestionView import AddQuestionView, EditQuestionView
 from Recruiter.views import views
 from accounts import views as account_views
 
