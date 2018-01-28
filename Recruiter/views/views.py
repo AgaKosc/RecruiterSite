@@ -17,15 +17,15 @@ def home(request):
 @login_required()
 def questions(request):
     questionList = Question.objects.order_by('summary')
-    context = {'questionList': questionList}
-    return render(request, 'Recruiter/questions/questions.html', context)
-
-@login_required()
-def detail(request):
-    questionList = Question.objects.order_by('summary')
     question_filter = QuestionFilter(request.GET, queryset=questionList)
     context = {'questionList': questionList, 'filter': question_filter}
     return render(request, 'Recruiter/questions/questions.html', context)
+
+
+@login_required()
+def detail(request, questionId):
+    question = get_object_or_404(Question, pk=questionId)
+    return render(request, 'Recruiter/questions/questionDetail.html', {'question': question})
 
 
 @login_required()
@@ -53,7 +53,7 @@ def addQuestion(request):
 def editQuestion(request, questionId):
     question = get_object_or_404(Question, pk=questionId)
     if request.method == 'POST':
-        form = QuestionForm(instance=question)
+        form = QuestionForm(request.POST, instance=question)
         if form.is_valid():
             form.save(commit=False)
             question.summary=form.cleaned_data.get('summary')
@@ -61,6 +61,7 @@ def editQuestion(request, questionId):
             question.answer=form.cleaned_data.get('answer')
             question.category_type=form.cleaned_data.get('category_type')
             question.save()
+            return redirect('questions')
     else:
-        form = QuestionForm()
+        form = QuestionForm(instance=question)
     return render(request, 'Recruiter/questions/editQuestion.html', {'form': form})

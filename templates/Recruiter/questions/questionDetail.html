@@ -13,7 +13,7 @@
         <h2>Question Detail</h2>
         {% if request.user == question.author  %}
         <div class="ml-md-auto ">
-            <!-- <a href="{% url 'editQuestion' question.id %}" class="btn btn-primary">Edit question</a> -->
+            <a href="{% url 'editQuestion' question.id %}" class="btn btn-primary">Edit question</a>
         </div>
         {% endif %}
     </div>
