@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^signup/$', account_views.signup, name='signup'),
     url(r'^questions/$', views.questions, name='questions'),
     url(r'^questions/(?P<questionId>[0-9]+)/$', views.detail, name='detail'),
-    url(r'^questions/add/$', login_required(AddQuestionView.as_view()), name='addQuestion'),
-    url(r'^questions/edit/(?P<questionId>[0-9]+)/$', login_required(EditQuestionView.as_view()), name='editQuestion'),
+    url(r'^questions/add/$', views.addQuestion, name='addQuestion'),
+    url(r'^questions/edit/(?P<questionId>[0-9]+)/$', views.editQuestion, name='editQuestion'),
     url(r'^admin/', admin.site.urls),
 ]
