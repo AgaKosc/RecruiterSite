@@ -9,7 +9,7 @@ class RegistrationForm(forms.Form):
     password2 = forms.CharField(label='Password (Again)', widget=forms.PasswordInput())
 
 
-class AddQuestionForm(forms.ModelForm):
+class QuestionForm(forms.ModelForm):
     summary = forms.CharField(label='Summary', max_length=100)
     content = forms.CharField(
         max_length=20000,
@@ -23,3 +23,10 @@ class AddQuestionForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ['summary', 'content', 'answer', 'category_type']
+
+    def get_initial(self):
+        super(QuestionForm, self).get_initial()
+        return {'summary': self.request.summary,
+                'content': self.request.content,
+                'answer': self.request.answer,
+                'category_type': self.request.category_type}

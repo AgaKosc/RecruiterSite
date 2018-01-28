@@ -17,6 +17,14 @@
     </div>
 </div>
 
+<form method="get">
+    <div class="ml-md-auto">
+        {{ filter.form.as_p }}
+    <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+
+  </form>
+
 {% if questionList %}
     <table class="table table-striped">
         <thead class="thead-inverse">
